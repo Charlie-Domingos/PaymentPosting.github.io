@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment Posting</title>
+  </head>
+  <body>
+    <section class="">
+      <form>
+        <label>
+        <input
+          class="name"
+          type="text"
+          id="name"
+          placeholder="Title"
+          required
+          minlength="5"
+          maxlength="60"
+        />
+        </label>
+
+        <label>
+        <input
+          class="money"
+          type="number"
+          id="money"
+          placeholder="Value"
+          required
+          minlength="0"
+        />
+      </label>
+
+      <label>
+        <input class="date" type="date" id="date" />
+      </label>
+      <label>
+        <input
+          class="tax"
+          type="tax"
+          id="tax"
+          placeholder="Tax"
+          required
+          minlength="0.0"
+        />
+      </label>
+      <label>
+        <input
+          class="descr"
+          type="text"
+          id="descr"
+          placeholder="Description"
+          required
+        />
+      </label>
+      <label>
+        <button
+          class="send"
+          id="send"
+          type="submit"
+          onclick="validatesend()"
+          value="Enviar"
+        >
+      </label>
+      </form>
+        Send
+      </button>
+    </section>
+    <section class=""></section>
+  </body>
+</html>
