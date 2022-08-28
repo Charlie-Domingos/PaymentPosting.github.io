@@ -7,21 +7,20 @@
     <title>Payment Posting</title>
   </head>
   <body>
-    <section class="">
-      <form>
-        <label>
+    <form method="POST" action="" id="form">
+      <label>
         <input
-          class="name"
+          class="title"
           type="text"
-          id="name"
+          id="tittle"
           placeholder="Title"
           required
           minlength="5"
           maxlength="60"
         />
-        </label>
+      </label>
 
-        <label>
+      <label>
         <input
           class="money"
           type="number"
@@ -54,19 +53,17 @@
           required
         />
       </label>
-      <label>
-        <button
-          class="send"
-          id="send"
-          type="submit"
-          onclick="validatesend()"
-          value="Enviar"
-        >
-      </label>
-      </form>
+      <button
+        class="send"
+        id="send"
+        type="submit"
+        onclick="validatesend()"
+        value="Enviar"
+      >
         Send
       </button>
-    </section>
+      <script type="text/javascript" src="send_data.js"></script>
+    </form>
     <section class=""></section>
   </body>
 </html>
