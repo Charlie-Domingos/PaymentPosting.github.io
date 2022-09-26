@@ -4,15 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.min.js"></script>
     <title>Payment Posting</title>
   </head>
   <body>
-    <form method="POST" action="" id="form">
+    <form method="POST" action="" name="form">
       <label>
         <input
           class="title"
           type="text"
-          id="tittle"
+          name="tittle"
           placeholder="Title"
           required
           minlength="5"
@@ -24,7 +25,7 @@
         <input
           class="money"
           type="number"
-          id="money"
+          name="money"
           placeholder="Value"
           required
           minlength="0"
@@ -32,13 +33,13 @@
       </label>
 
       <label>
-        <input class="date" type="date" id="date" />
+        <input class="date" type="date" name="date" />
       </label>
       <label>
         <input
           class="tax"
           type="tax"
-          id="tax"
+          name="tax"
           placeholder="Tax"
           required
           minlength="0.0"
@@ -48,22 +49,41 @@
         <input
           class="descr"
           type="text"
-          id="descr"
+          name="descr"
           placeholder="Description"
           required
         />
       </label>
       <button
         class="send"
-        id="send"
+        name="send"
         type="submit"
         onclick="validatesend()"
         value="Enviar"
       >
         Send
       </button>
-      <script type="text/javascript" src="send_data.js"></script>
+      <script>
+        function validatesend() {
+          const tittle = form.tittle;
+          const money = form.money;
+          const date = form.date;
+          const tax = form.tax;
+          const descr = form.desc;
+
+          if ((money.value, tax.value <= 0)) {
+            alert("Valor inválido");
+
+            money.focus();
+            tax.focus();
+          }
+
+          var data = moment(form.date, "DD/MM/YYYY")
+          console.log(data.format("YYYY-MM-DD"))
+        
+        }
+      </script>
     </form>
-    <section class=""></section>
+    <section class="Preview"></section>
   </body>
 </html>
