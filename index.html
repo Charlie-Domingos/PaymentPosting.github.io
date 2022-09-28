@@ -9,89 +9,97 @@
   </head>
   <body>
     <section id="form_area">
-    <form method="POST" action="" name="form">
-      <div class="input_form">
-      <label>
-        <input
-          class="title"
-          type="text"
-          name="tittle"
-          placeholder="Title"
-          required
-          minlength="5"
-          maxlength="100"
-        />
-      </label>
+      <form method="POST" action="" name="form">
+        <ul>
+          <li>
+            <label>
+              <input
+                class="title"
+                type="text"
+                name="tittle"
+                placeholder="Title"
+                required
+                minlength="5"
+                maxlength="100"
+              />
+            </label>
+          </li>
 
-      <label>
-        <input
-          class="money"
-          type="number"
-          name="money"
-          placeholder="Value"
-          required
-          minlength="0"
-        />
-      </label>
+          <li>
+            <label>
+              <input
+                class="money"
+                type="number"
+                name="money"
+                placeholder="Value"
+                required
+                minlength="0"
+              />
+            </label>
+          </li>
+          <label>
+            <input class="date" type="date" name="date" />
+          </label>
 
-      <label>
-        <input class="date" type="date" name="date" />
-      </label>
-      <label>
-        <input
-          class="tax"
-          type="tax"
-          name="tax"
-          placeholder="5%"
-          default-value="5%"
-          disabled="disabled"
-        />
-      </label>
-      <label>
-        <input
-          class="descr"
-          type="text"
-          name="descr"
-          placeholder="Description"
-        />
-      </label>
-      <button
-        class="send"
-        name="send"
-        type="submit"
-        onclick="validatesend()"
-        value="Enviar"
-      >
-        Send
-      </button>
-    </div>
-      <script>
-        function validatesend() {
-          let tittle = form.tittle;
-          let money = form.money;  
-          let date = form.date;
-          let descr = form.desc;
+          <li>
+            <label>
+              <input
+                class="tax"
+                type="tax"
+                name="tax"
+                placeholder="5%"
+                default-value="5%"
+                disabled="disabled"
+              />
+            </label>
+          </li>
+          <li>
+            <label>
+              <input
+                class="descr"
+                type="text"
+                name="descr"
+                placeholder="Description"
+              />
+            </label>
+          </li>
 
-          if (money.value <= 0) {
-            alert("Valor inválido");
+          <li>
+            <button
+              class="send"
+              name="send"
+              type="submit"
+              onclick="validatesend()"
+              value="Enviar"
+            >
+              Send
+            </button>
+          </li>
+        </ul>
+        <script>
+          function validatesend() {
+            let tittle = form.tittle;
+            let money = form.money;
+            let date = form.date;
+            let descr = form.desc;
 
-            money.focus();
-            tax.focus();
+            if (money.value <= 0) {
+              alert("Valor inválido");
+
+              money.focus();
+              tax.focus();
+            }
           }
-        
-        }
 
-        function calc_tax(){
-          let tax = form.tax;
+          function calc_tax() {
+            let tax = form.tax;
 
-          if ( tax.value ) {
-            
+            if (tax.value) {
+            }
           }
-
-        }
-      </script>
-    </form>
-  </section>
+        </script>
+      </form>
+    </section>
     <section class="preview"></section>
   </body>
 </html>
