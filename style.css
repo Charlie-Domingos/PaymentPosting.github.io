@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+  }
+
+  body {
+    background-color: rgb(139, 148, 158);
+    background-size: 100% auto;
+  }
+
+  #form_area{
+    display: flex;
+    background-color: rgb(180, 184, 188);
+    margin-top: 100px;
+    height: 100px;
+    
+  }
+
+  div.input_form {
+  }

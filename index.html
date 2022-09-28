@@ -4,11 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.min.js"></script>
+    <link href="style.css" rel="stylesheet" />
     <title>Payment Posting</title>
   </head>
   <body>
+    <section id="form_area">
     <form method="POST" action="" name="form">
+      <div class="input_form">
       <label>
         <input
           class="title"
@@ -17,7 +19,7 @@
           placeholder="Title"
           required
           minlength="5"
-          maxlength="60"
+          maxlength="100"
         />
       </label>
 
@@ -40,9 +42,9 @@
           class="tax"
           type="tax"
           name="tax"
-          placeholder="Tax"
-          required
-          minlength="0.0"
+          placeholder="5%"
+          default-value="5%"
+          disabled="disabled"
         />
       </label>
       <label>
@@ -51,7 +53,6 @@
           type="text"
           name="descr"
           placeholder="Description"
-          required
         />
       </label>
       <button
@@ -63,27 +64,34 @@
       >
         Send
       </button>
+    </div>
       <script>
         function validatesend() {
-          const tittle = form.tittle;
-          const money = form.money;
-          const date = form.date;
-          const tax = form.tax;
-          const descr = form.desc;
+          let tittle = form.tittle;
+          let money = form.money;  
+          let date = form.date;
+          let descr = form.desc;
 
-          if ((money.value, tax.value <= 0)) {
+          if (money.value <= 0) {
             alert("Valor inválido");
 
             money.focus();
             tax.focus();
           }
-
-          var data = moment(form.date, "DD/MM/YYYY")
-          console.log(data.format("YYYY-MM-DD"))
         
+        }
+
+        function calc_tax(){
+          let tax = form.tax;
+
+          if ( tax.value ) {
+            
+          }
+
         }
       </script>
     </form>
-    <section class="Preview"></section>
+  </section>
+    <section class="preview"></section>
   </body>
 </html>
