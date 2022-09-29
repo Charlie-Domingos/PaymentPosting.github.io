@@ -14,7 +14,7 @@
           <li>
             <label>
               <input
-                class="title"
+                class="input_form"
                 type="text"
                 name="tittle"
                 placeholder="Title"
@@ -28,7 +28,7 @@
           <li>
             <label>
               <input
-                class="money"
+                class="input_form"
                 type="number"
                 name="money"
                 placeholder="Value"
@@ -37,14 +37,17 @@
               />
             </label>
           </li>
-          <label>
-            <input class="date" type="date" name="date" />
-          </label>
+
+          <li>
+            <label>
+              <input class="input_form" type="date" name="date" />
+            </label>
+          </li>
 
           <li>
             <label>
               <input
-                class="tax"
+                class="input_form"
                 type="tax"
                 name="tax"
                 placeholder="5%"
@@ -53,53 +56,63 @@
               />
             </label>
           </li>
+
           <li>
             <label>
-              <input
-                class="descr"
+              <textarea
+                class="input_form"
                 type="text"
                 name="descr"
                 placeholder="Description"
-              />
+              ></textarea>
             </label>
           </li>
 
           <li>
-            <button
-              class="send"
-              name="send"
-              type="submit"
-              onclick="validatesend()"
-              value="Enviar"
-            >
-              Send
-            </button>
+            <section id="input_btn">
+              <button
+                class="input_send"
+                name="send"
+                type="submit"
+                onclick="validatesend()"
+                value="Enviar"
+              >
+                Send
+              </button>
+              <button class="input_consult" name="" type="" onclick="" value="">
+                Consult
+              </button>
+            </section>
           </li>
         </ul>
-        <script>
-          function validatesend() {
-            let tittle = form.tittle;
-            let money = form.money;
-            let date = form.date;
-            let descr = form.desc;
-
-            if (money.value <= 0) {
-              alert("Valor inválido");
-
-              money.focus();
-              tax.focus();
-            }
-          }
-
-          function calc_tax() {
-            let tax = form.tax;
-
-            if (tax.value) {
-            }
-          }
-        </script>
       </form>
     </section>
-    <section class="preview"></section>
+    <section id="preview"></section>
+    <script>
+      function validatesend() {
+        let tittle = form.tittle;
+        let money = form.money;
+        let date = form.date;
+        let descr = form.desc;
+
+        if (money.value <= 0) {
+          alert("Valor inválido");
+
+          money.focus();
+        }
+
+        console.log(tittle.value);
+        console.log(money.value);
+        console.log(date.value);
+        console.log(descr);
+      }
+
+      function calc_tax() {
+        let tax = form.tax;
+
+        if (tax.value) {
+        }
+      }
+    </script>
   </body>
 </html>
