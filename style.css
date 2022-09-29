@@ -4,21 +4,23 @@
   border: 0;
   box-sizing: border-box;
   font-family: "poppins", sans-serif;
+  
 }
 
 body {
-  background-color: rgb(180, 184, 188);
+  background-color: rgb(255, 255, 255);
   background-size: 100% auto;
 }
 
 #form_area {
   margin-top: 8%;
-  background-color: rgb(139, 148, 158);
+  background-color: rgb(185, 185, 185);
+  border: 2px solid #808081;
   border-radius: 7px;
   text-align: center;
   width: 60%;
   margin: 0 auto;
-  margin-top: 40px;
+  margin-top: 15px;
   padding-top: 40px;
 }
 

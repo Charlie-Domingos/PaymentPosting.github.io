@@ -50,7 +50,7 @@
                 class="input_form"
                 type="tax"
                 name="tax"
-                placeholder="5%"
+                placeholder="a fee of 5% will be added to the value"
                 default-value="5%"
                 disabled="disabled"
               />
@@ -74,7 +74,7 @@
                 class="input_send"
                 name="send"
                 type="submit"
-                onclick="validatesend()"
+                onclick="calc_tax()"
                 value="Enviar"
               >
                 Send
@@ -89,28 +89,20 @@
     </section>
     <section id="preview"></section>
     <script>
-      function validatesend() {
+      function calc_tax() {
         let tittle = form.tittle;
         let money = form.money;
         let date = form.date;
+        let tax = form.tax;
         let descr = form.desc;
 
-        if (money.value <= 0) {
-          alert("Valor inválido");
+        if (money.value > 0) {
+          let tax_result = (5 / 100) * money.value;
+          console.log(tax_result);
+        } else {
+          alert("Valor Inválido");
 
           money.focus();
-        }
-
-        console.log(tittle.value);
-        console.log(money.value);
-        console.log(date.value);
-        console.log(descr);
-      }
-
-      function calc_tax() {
-        let tax = form.tax;
-
-        if (tax.value) {
         }
       }
     </script>
