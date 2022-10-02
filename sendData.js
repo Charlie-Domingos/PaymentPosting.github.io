@@ -2,17 +2,19 @@ var info = []
 
 function InsertData() {
   if (Array.isArray(info)) {
-    localStorage.setItem('_info_', JSON.stringify(info)) //Faz a conversão dos dados
+    localStorage.setItem('__info__', JSON.stringify(info)) //Faz a conversão dos dados para o modo txt
 
     $('#tbData tbody').html('') //Faz a limpeza de todo conteudo da tabela tbody
 
     info.forEach(function (item) {
       $('#tbData tbody').append(`<tr>
-      <td>${item.ID}</td>
-      <td>${item.Título}</td>
-      <td>${item.Dinheiro}</td>
-      <td>${item.Data}</td>
-      <td>${item.Descrição}</td>
+      <td>${item.id}</td>
+      <td>${item.tittle}</td>
+      <td>${item.money}</td>
+      <td>${item.day}</td>
+      <td>${item.descr}</td>
+      <td><button type="button" class="btn btn-primary"><i class="fas fa-edit"></i></button></td>
+      <td><button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button></td>
       
       </tr>`) //função append adciona um trecho html a cada rodada no tbody usando template string
     })
@@ -21,7 +23,7 @@ function InsertData() {
 
 $(function () {
   //Irá ser executado primeiro
-  // transforma toda a string em JSON com JSON.parse
+  // transforma toda a string em JSON
   info = JSON.parse(localStorage.getItem('__info__')) //verifica se ja tem algo armazenado
 
   if (info) {
@@ -32,21 +34,20 @@ $(function () {
   $('#btnSave').click(function () {
     // será executado quando clicar no botão salvar
 
-    let Tittle = $('#tittleName').val()
-    let Money = $('#moneyValue').val()
+    let tittle = $('#tittleName').val()
+    let money = $('#moneyValue').val()
     let day = new Date($('#dateValue').val()).toLocaleDateString('pt-br', {
       timeZone: 'UTC'
     }) // Faz a conversão da data p/ pt-br
-    let Desc = $('#descrName').val()
+    let descr = $('#descrName').val()
 
     let register = {}
 
-    register.Tittle = Tittle
-    register.Money = Money
+    register.tittle = tittle
+    register.money = money
     register.day = day
-    register.Desc = Desc
-
-    register.ID = day.length + 1
+    register.descr = descr
+    register.id = info.length + 1
 
     info.push(register)
 

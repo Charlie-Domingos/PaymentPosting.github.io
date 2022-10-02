@@ -10,7 +10,10 @@
       integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
       crossorigin="anonymous"
     />
-    <link href="style.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
+      rel="stylesheet"
+    />
 
     <title>Payment Posting</title>
   </head>
@@ -38,7 +41,7 @@
           <!--Class btn-primary deixa botão azul e (vide documento)-->
         </div>
       </div>
-      <div class="row">
+      <div class="row" style="margin-top: 30px">
         <div class="col-md-12">
           <table id="tbData" class="table table-striped table-hover">
             <thead>
@@ -48,6 +51,8 @@
                 <th scope="col">Dinheiro</th>
                 <th scope="col">Data</th>
                 <th scope="col">Descrição</th>
+                <th scope="col" style="width: 50px"></th>
+                <th scope="col" style="width: 50px"></th>
               </tr>
             </thead>
             <tbody></tbody>
@@ -76,8 +81,8 @@
             ></button>
           </div>
           <div class="modal-body">
-            <!--tittle input-->
             <div class="row">
+              <!--tittle input-->
               <div class="col-md-12">
                 <div class="form-group">
                   <label for="">Título</label>
