@@ -30,9 +30,11 @@ $(function () {
     //fazendo um if apontando uma váriável, será feito (!= " ")
     InsertData()
   }
+  
 
   $('#btnSave').click(function () {
     // será executado quando clicar no botão salvar
+    
 
     let tittle = $('#tittleName').val()
     let money = $('#moneyValue').val()
@@ -49,6 +51,7 @@ $(function () {
     register.descr = descr
     register.id = info.length + 1
 
+    
     info.push(register)
 
     alert('Registro salvo')
