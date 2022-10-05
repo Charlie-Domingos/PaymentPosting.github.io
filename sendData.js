@@ -1,5 +1,26 @@
 var info = []
 
+function deletRegister(id) {
+  let _confirm = confirm("Deseja DELETAR este registro?")
+
+  if (_confirm){
+    for(let i = 0; i < info.length; ++i){
+      if (info[i].ID = id) {
+        info.splice(i, 1)
+         //função splice para apagar um indice do array
+      }
+    }
+    // varrer novamente os registro p/ validar exclusão
+    
+    InsertData()
+  }
+}
+
+function editRegister(id) {
+  let_confirm = confirm("Deseja DELETAR este registro?")
+}
+
+
 function InsertData() {
   if (Array.isArray(info)) {
     localStorage.setItem('__info__', JSON.stringify(info)) //Faz a conversão dos dados para o modo txt
@@ -14,7 +35,7 @@ function InsertData() {
       <td>${item.day}</td>
       <td>${item.descr}</td>
       <td><button type="button" class="btn btn-primary"><i class="fas fa-edit"></i></button></td>
-      <td><button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button></td>
+      <td><button type="button" class="btn btn-danger" onclick="javascript:deletRegister(${item.id});"><i class="fas fa-trash"></i></button></td>
       
       </tr>`) //função append adciona um trecho html a cada rodada no tbody usando template string
     })
