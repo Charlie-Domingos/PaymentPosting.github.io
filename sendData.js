@@ -10,14 +10,24 @@ function deletRegister(id) {
          //função splice para apagar um indice do array
       }
     }
-    // varrer novamente os registro p/ validar exclusão
+    // chamada do insertdata par atualizar os registros.
     
     InsertData()
   }
 }
 
 function editRegister(id) {
-  let_confirm = confirm("Deseja DELETAR este registro?")
+  $("#modalregister").modal("show")
+
+  info.forEach(function(item){
+
+    if(item.ID = id){
+      $("#tittleName").value(item.tittle)
+      $("#moneyValue").value(item.money)
+      $("#dateValue").value(item.day)
+      $("#descrName").value(item.descr)
+    }
+  })
 }
 
 
@@ -34,7 +44,7 @@ function InsertData() {
       <td>${item.money}</td>
       <td>${item.day}</td>
       <td>${item.descr}</td>
-      <td><button type="button" class="btn btn-primary"><i class="fas fa-edit"></i></button></td>
+      <td><button type="button" class="btn btn-primary" onclick="javascript.editRegister(${item.id});"><i class="fas fa-edit"></i></button></td>
       <td><button type="button" class="btn btn-danger" onclick="javascript:deletRegister(${item.id});"><i class="fas fa-trash"></i></button></td>
       
       </tr>`) //função append adciona um trecho html a cada rodada no tbody usando template string
