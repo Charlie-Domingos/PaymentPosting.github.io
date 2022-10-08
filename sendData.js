@@ -1,35 +1,40 @@
 var info = []
 
 function deletRegister(id) {
-  let _confirm = confirm("Deseja DELETAR este registro?")
+  let _confirm = confirm('Deseja DELETAR este registro?')
 
-  if (_confirm){
-    for(let i = 0; i < info.length; ++i){
-      if (info[i].ID = id) {
+  if (_confirm) {
+    for (let i = 0; i < info.length; ++i) {
+      if ((info[i].ID = id)) {
         info.splice(i, 1)
-         //função splice para apagar um indice do array
+        //função splice para apagar um indice do array
       }
     }
     // chamada do insertdata par atualizar os registros.
-    
+
     InsertData()
   }
 }
 
 function editRegister(id) {
-  $("#modalregister").modal("show")
+  $('#modalregister').modal('show')
 
-  info.forEach(function(item){
-
-    if(item.ID = id){
-      $("#tittleName").val(item.tittle)
-      $("#moneyValue").val(item.money)
-      $("#dateValue").val(item.day)
-      $("#descrName").val(item.descr)
+  info.forEach(function (item) {
+    if ((item.ID = id)) {
+      $('#hideID').val(item.ID)
+      $('#tittleName').val(item.tittle)
+      $('#moneyValue').val(item.money)
+      $('#dateValue').val(
+        item.day.substr(6, 4) +
+          '-' +
+          item.day.substr(3, 2) +
+          '-' +
+          item.day.substr(0, 2)
+      )
+      $('#descrName').val(item.descr)
     }
   })
 }
-
 
 function InsertData() {
   if (Array.isArray(info)) {
@@ -57,16 +62,21 @@ $(function () {
   // transforma toda a string em JSON
   info = JSON.parse(localStorage.getItem('__info__')) //verifica se ja tem algo armazenado
 
+  //tratativa de erro, verifica se o array é null
+  if (info != null) {
+    InsertData()
+  } else {
+    info = []
+  }
   if (info) {
     //fazendo um if apontando uma váriável, será feito (!= " ")
     InsertData()
   }
-  
 
   $('#btnSave').click(function () {
     // será executado quando clicar no botão salvar
-    
 
+    let _id = $('#hideID').val()
     let tittle = $('#tittleName').val()
     let money = $('#moneyValue').val()
     let day = new Date($('#dateValue').val()).toLocaleDateString('pt-br', {
@@ -74,21 +84,33 @@ $(function () {
     }) // Faz a conversão da data p/ pt-br
     let descr = $('#descrName').val()
 
-    let register = {}
+    // senteça responsavel pela edição do registro
+    if (!_id || _id == '0') {
+      let register = {}
 
-    register.tittle = tittle
-    register.money = money
-    register.day = day
-    register.descr = descr
-    register.id = info.length + 1
+      register.tittle = tittle
+      register.money = money
+      register.day = day
+      register.descr = descr
 
-    
-    info.push(register)
+      register.id = info.length + 1
+      info.push(register)
+    } else {
+      info.forEach(function (item) {
+        if ((item.ID = _id)) {
+          item.tittle = tittle
+          item.money = money
+          item.day = day
+          item.descr = descr
+        }
+      })
+    }
 
     alert('Registro salvo')
     $('#modalregister').modal('hide') //Fecha a modal Registro
 
     // limpa os campos do modal ao usuário retornar
+    $('#hideID').val('0')
     $('#tittleName').val('')
     $('#moneyValue').val('')
     $('#dateValue').val('')
