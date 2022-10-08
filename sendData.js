@@ -22,10 +22,10 @@ function editRegister(id) {
   info.forEach(function(item){
 
     if(item.ID = id){
-      $("#tittleName").value(item.tittle)
-      $("#moneyValue").value(item.money)
-      $("#dateValue").value(item.day)
-      $("#descrName").value(item.descr)
+      $("#tittleName").val(item.tittle)
+      $("#moneyValue").val(item.money)
+      $("#dateValue").val(item.day)
+      $("#descrName").val(item.descr)
     }
   })
 }
@@ -44,7 +44,7 @@ function InsertData() {
       <td>${item.money}</td>
       <td>${item.day}</td>
       <td>${item.descr}</td>
-      <td><button type="button" class="btn btn-primary" onclick="javascript.editRegister(${item.id});"><i class="fas fa-edit"></i></button></td>
+      <td><button type="button" class="btn btn-primary" onclick="javascript:editRegister(${item.id});"><i class="fas fa-edit"></i></button></td>
       <td><button type="button" class="btn btn-danger" onclick="javascript:deletRegister(${item.id});"><i class="fas fa-trash"></i></button></td>
       
       </tr>`) //função append adciona um trecho html a cada rodada no tbody usando template string
