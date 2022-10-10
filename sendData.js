@@ -1,27 +1,33 @@
 var info = []
 
-function deletRegister(id) {
+function deletRegister(ID) {
   let _confirm = confirm('Deseja DELETAR este registro?')
 
   if (_confirm) {
     for (let i = 0; i < info.length; ++i) {
-      if ((info[i].ID = id)) {
+      if ((info[i].id == ID)) {
         info.splice(i, 1)
         //função splice para apagar um indice do array
       }
     }
     // chamada do insertdata par atualizar os registros.
 
+    $('#hideID').val('0')
+    $('#tittleName').val('')
+    $('#moneyValue').val('')
+    $('#dateValue').val('')
+    $('#descrName').val('')
+
     InsertData()
   }
 }
 
-function editRegister(id) {
+function editRegister(ID) {
   $('#modalregister').modal('show')
 
   info.forEach(function (item) {
-    if ((item.ID = id)) {
-      $('#hideID').val(item.ID)
+    if ((item.id == ID)) {
+      $('#hideID').val(item.id)
       $('#tittleName').val(item.tittle)
       $('#moneyValue').val(item.money)
       $('#dateValue').val(
@@ -85,7 +91,7 @@ $(function () {
     let descr = $('#descrName').val()
 
     // senteça responsavel pela edição do registro
-    if (!_id || _id == '0') {
+    if (!_id || _id == "0") {
       let register = {}
 
       register.tittle = tittle
