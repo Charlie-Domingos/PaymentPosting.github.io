@@ -39,6 +39,14 @@ function editRegister(ID) {
       )
       $('#descrName').val(item.descr)
     }
+
+    $('#hideID').val('0')
+    $('#tittleName').val('')
+    $('#moneyValue').val('')
+    $('#dateValue').val('')
+    $('#descrName').val('')
+
+    InsertData()
   })
 }
 
@@ -84,7 +92,8 @@ $(function () {
 
     let _id = $('#hideID').val()
     let tittle = $('#tittleName').val()
-    let money = $('#moneyValue').val()
+    //Conversão para Moeda-BR
+    let money = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format($('#moneyValue').val())
     let day = new Date($('#dateValue').val()).toLocaleDateString('pt-br', {
       timeZone: 'UTC'
     }) // Faz a conversão da data p/ pt-br
@@ -103,7 +112,7 @@ $(function () {
       info.push(register)
     } else {
       info.forEach(function (item) {
-        if ((item.ID = _id)) {
+        if ((item.id == _id)){
           item.tittle = tittle
           item.money = money
           item.day = day
