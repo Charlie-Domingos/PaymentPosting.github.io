@@ -52,7 +52,7 @@ function InsertData() {
       $("#tbData tbody").append(`<tr>
       <td>${item.id}</td>
       <td>${item.tittle}</td>
-      <td>${item.money}</td>
+      <td>R$ ${item.money}</td>
       <td>${item.day}</td>
       <td>${item.descr}</td>
       <td><button type="button" class="btn btn-primary" onclick="javascript:editRegister(${item.id});"><i class="fas fa-edit"></i></button></td>
