@@ -1,7 +1,7 @@
 <h1 align="center"> PaymentPosting</h1>
 
 <p align="center">
-Evento exclusivo e gratuito, promovido pela Rocketseat para ensino de tecnologias WEB.
+Projeto construido para práticar a lógica, apredender novas tecnologias e contruibuir com o conhecimento da comunidade DEV.
 </p>
 
 
