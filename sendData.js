@@ -7,10 +7,9 @@ function deletRegister(ID) {
     for (let i = 0; i < info.length; ++i) {
       if (info[i].id == ID) {
         info.splice(i, 1);
-        //função splice para apagar um indice do array
       }
     }
-    // chamada do insertdata par atualizar os registros.
+    // chamada do insertdata para atualizar os registros.
 
     $("#hideID").val("0");
     $("#tittleName").val("");
@@ -42,10 +41,10 @@ function editRegister(ID) {
   });
 }
 
+// Verifica se é um array
 function InsertData() {
   if (Array.isArray(info)) {
-    localStorage.setItem("__info__", JSON.stringify(info)); //Faz a conversão dos dados para o modo txt
-
+    localStorage.setItem("__info__", JSON.stringify(info));
     $("#tbData tbody").html(""); //Faz a limpeza de todo conteudo da tabela tbody
 
     info.forEach(function (item) {
@@ -58,15 +57,14 @@ function InsertData() {
       <td><button type="button" class="btn btn-primary" onclick="javascript:editRegister(${item.id});"><i class="fas fa-edit"></i></button></td>
       <td><button type="button" class="btn btn-danger" onclick="javascript:deletRegister(${item.id});"><i class="fas fa-trash"></i></button></td>
       
-      </tr>`); //função append adciona um trecho html a cada rodada no tbody usando template string
+      </tr>`);
     });
   }
 }
 
 $(function () {
-  //Irá ser executado primeiro
   // transforma toda a string em JSON
-  info = JSON.parse(localStorage.getItem("__info__")); //verifica se ja tem algo armazenado
+  info = JSON.parse(localStorage.getItem("__info__"));
 
   //tratativa de erro, verifica se o array é null
   if (info != null) {
@@ -75,24 +73,16 @@ $(function () {
     info = [];
   }
   if (info) {
-    //fazendo um if apontando uma váriável, será feito (!= " ")
     InsertData();
   }
 
   $("#btnSave").click(function () {
-    // será executado quando clicar no botão salvar
-
     let _id = $("#hideID").val();
     let tittle = $("#tittleName").val();
-    //Conversão para Moeda-BR
     let money = $("#moneyValue").val();
-    /*let money = new Intl.NumberFormat('pt-BR', {
-      style: 'currency',
-      currency: 'BRL'
-    }).format($('#moneyValue').val())*/
     let day = new Date($("#dateValue").val()).toLocaleDateString("pt-br", {
       timeZone: "UTC",
-    }); // Faz a conversão da data p/ pt-br
+    });
     let descr = $("#descrName").val();
 
     // senteça responsavel pela edição do registro
@@ -118,9 +108,10 @@ $(function () {
     }
 
     alert("Registro salvo");
-    $("#modalregister").modal("hide"); //Fecha a modal Registro
+    $("#modalregister").modal("hide");
 
     // limpa os campos do modal ao usuário retornar
+
     $("#hideID").val("0");
     $("#tittleName").val("");
     $("#moneyValue").val("");
