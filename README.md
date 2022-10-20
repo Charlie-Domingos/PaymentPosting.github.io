@@ -23,7 +23,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-Este projeto foi contruido visando simular as operaçõs básicas de um sistema que interage com um banco de dados, mais conhecido como CRUD (Creat, read, update, delete). Neste projeto foi utilizado a API Web Storage, com essa API é possível acessar os dados do navegador do usuário e mesmo após atualizar a pagina os dados permanecem acessíveis.
+Este projeto foi contruido visando simular as operações básicas de um sistema que interage com um banco de dados, mais conhecido como CRUD (Creat, read, update, delete). Neste projeto foi utilizado a API Web Storage, com essa API é possível acessar os dados do navegador do usuário e mesmo após atualizar a pagina os dados permanecem acessíveis.
 
 ## 🎯 Desafios
 
