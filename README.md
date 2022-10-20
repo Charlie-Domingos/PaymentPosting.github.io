@@ -16,7 +16,6 @@ Projeto construido para práticar a lógica, apredender novas tecnologias e cont
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - HTML
-- CSS
 - JavaScript
 - Web Storage
 - Bootstrap
