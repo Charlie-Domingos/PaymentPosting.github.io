@@ -14,7 +14,6 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
       rel="stylesheet"
     />
-
     <title>Payment Posting</title>
   </head>
   <body>
@@ -32,13 +31,12 @@
         <div class="col-md-12">
           <button
             type="button"
-            class="btn btn-primary float-end"
+            class="btn btn-primary float-end d-none d-md-block"
             data-bs-toggle="modal"
             data-bs-target="#modalregister"
           >
             Adicionar
           </button>
-          <!--Class btn-primary deixa botão azul e (vide documento)-->
         </div>
       </div>
       <div class="row" style="margin-top: 30px">
@@ -154,6 +152,27 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="col-md12 d-flex justify-content-end fixed-bottom p-5">
+      <button
+        type="button"
+        class="btn btn-primary d-md-none mt-3"
+        data-bs-toggle="modal"
+        data-bs-target="#modalregister"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="55"
+          height="55"
+          fill="currentColor"
+          class="bi bi-plus"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+          />
+        </svg>
+      </button>
     </div>
     <script
       src="https://code.jquery.com/jquery-3.6.1.js"
